@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>UNIT 1 & 2 - MIXED REPHRASINGS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--card:#fff;--tx:#2a1a12;--mu:#8a6a5a;--bg1:#ffd23f;--bg2:#ff5e57;--bg3:#1b2a6b;--ac:#ff5e57;--ans:#e3fbe9;--ansb:#17a34a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--card:#1c1f3a;--tx:#fff;--mu:#d6c4b8;--ans:#0f3a2a;--ansb:#3ee08a}}
+:root[data-theme="dark"]{--card:#1c1f3a;--tx:#fff;--mu:#d6c4b8;--ans:#0f3a2a;--ansb:#3ee08a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;background:linear-gradient(135deg,var(--bg1),var(--bg2) 50%,var(--bg3));color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box}
+.card{background:var(--card);border-radius:24px;max-width:700px;width:100%;padding:30px 28px;box-sizing:border-box;border-top:10px solid var(--ac);box-shadow:0 14px 40px rgba(0,0,0,.28)}
+.cover{text-align:center;padding:60px 28px;background:linear-gradient(135deg,#ffe14d,#ff6a4d 50%,#3b2fb0);color:#fff;border-top:none}
+.cover h1{font-size:clamp(28px,7.5vw,48px);line-height:1.1;margin:0 0 34px;text-shadow:0 3px 0 rgba(0,0,0,.2)}
+.cnt{color:var(--ac);font-size:15px;font-weight:800;margin-bottom:12px}
+.bar{height:8px;background:rgba(128,128,160,.25);border-radius:4px;margin-bottom:24px}.bar i{display:block;height:100%;background:var(--ac);border-radius:4px}
+.s{font-size:clamp(20px,4.5vw,27px);line-height:1.35;margin:0 0 16px;font-weight:600}
+.p{display:inline-block;font-weight:800;color:#fff;background:var(--ac);border-radius:999px;padding:6px 20px;font-size:20px;margin-bottom:24px}
+.a{background:var(--ans);border-left:6px solid var(--ansb);border-radius:12px;padding:14px 16px;font-size:clamp(18px,4vw,22px);margin-bottom:24px;font-weight:600}
+.a[hidden]{display:none}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+button{font:inherit;font-weight:800;border-radius:14px;padding:12px 22px;cursor:pointer;border:3px solid var(--ac);background:var(--ac);color:#fff}
+button.g{background:transparent;color:var(--ac)}
+button.w{background:#fff;color:#d6402f;border-color:#fff}
+.sum{max-height:70vh;overflow-y:auto;margin:0 0 20px;padding:0;list-style:none}
+.sum li{border-left:6px solid var(--ac);background:rgba(160,130,128,.14);border-radius:10px;padding:10px 14px;margin-bottom:10px;line-height:1.35}
+.sum b{color:var(--ac)}.sum em{display:block;font-style:normal;color:var(--ansb);font-weight:700;margin-top:4px}
+h2{margin:0 0 16px}
+</style></head><body>
+<div class="card" id="c"></div>
+<script>
+const D=[
+["It's the first time Leo has flown in a plane.","never","Leo has never flown in a plane before."],
+["Our neighbours are going to sleep all day tomorrow.","all day","Our neighbours will be sleeping all day tomorrow."],
+["My aunt bought her car five years ago and she still has it.","for","My aunt has had her car for five years."],
+["We're going to build a treehouse before the end of the summer.","by the end of the summer","By the end of the summer, we will have built a treehouse."],
+["When did you begin writing songs?","How long","How long have you been writing songs?"],
+["She is still choosing a dress for the party.","finished","She hasn't finished choosing a dress for the party yet."],
+["Tom is going to drive to the coast tomorrow morning.","this time tomorrow","This time tomorrow, Tom will be driving to the coast."],
+["I last spoke to my grandmother in May.","since","I haven't spoken to my grandmother since May."],
+["The kids started swimming at two and it's now five.","hours","The kids have been swimming for hours."],
+["Will people eat insects one day?","in the future","Will people be eating insects in the future?"],
+["Mia broke her phone a moment ago.","just","Mia has just broken her phone."],
+["My brother is going to grow three centimetres before his next birthday.","by his next birthday","By his next birthday, my brother will have grown three centimetres."],
+["Is this your first time eating sushi?","ever","Have you ever eaten sushi?"],
+["The choir is probably going to sing at the wedding all evening.","all evening","The choir will probably be singing at the wedding all evening."],
+["Why are your hands dirty? Were you digging in the garden?","been","Why are your hands dirty? Have you been digging in the garden?"],
+["Her team won two trophies and the season is still going.","so far","Her team has won two trophies so far."],
+["My parents are going to buy a new house before I finish school.","by the time I finish school","By the time I finish school, my parents will have bought a new house."],
+["Sam ate lunch at noon, so he isn't hungry.","already","Sam has already eaten lunch."],
+["When did your uncle become a pilot?","How long","How long has your uncle been a pilot?"],
+["How many books are you going to read this year?","by the end of the year","How many books will you have read by the end of the year?"]
+];
+const cols=['#ff5e57','#2f6bff','#00a88f','#8a4cff','#ff8a1a','#e0267d'];
+const c=document.getElementById('c');const N=D.length;
+function setC(k){document.documentElement.style.setProperty('--ac',k)}
+function cover(){setC('#ff5e57');c.className='card cover';c.innerHTML='<h1>UNIT 1 &amp; 2 - MIXED REPHRASINGS</h1><button class="w" id="st">Start</button>';st.onclick=()=>show(0)}
+function show(i){
+ setC(cols[i%cols.length]);c.className='card';
+ c.innerHTML=`<div class="cnt">${i+1} / ${N}</div><div class="bar"><i style="width:${(i+1)/N*100}%"></i></div>
+ <p class="s">${D[i][0]}</p><div class="p">(${D[i][1]})</div>
+ <div class="a" id="a" hidden>${D[i][2]}</div>
+ <div class="row"><button class="g" id="b">Back</button><button id="r">Show answer</button><button class="g" id="n">${i==N-1?'All answers':'Next'}</button></div>`;
+ b.onclick=()=>i==0?cover():show(i-1);
+ r.onclick=()=>{a.hidden=!a.hidden;r.textContent=a.hidden?'Show answer':'Hide answer'};
+ n.onclick=()=>i==N-1?summary():show(i+1)}
+function summary(){
+ setC('#8a4cff');c.className='card';
+ c.innerHTML='<h2>All sentences and answers</h2><ol class="sum">'+D.map(d=>`<li>${d[0]} <b>(${d[1]})</b><em>${d[2]}</em></li>`).join('')+'</ol><div class="row"><button class="g" id="b">Back</button><button id="h">Cover</button></div>';
+ b.onclick=()=>show(N-1);h.onclick=cover}
+cover();
+</script></body></html>
